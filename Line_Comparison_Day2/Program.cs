@@ -32,6 +32,17 @@
             double length1 = l1.CalLength();
             Console.WriteLine("Length of first line: " + length1);
 
+            Line l2 = new Line();
+            double length2 = l1.CalLength();
+            Console.WriteLine("Length of second line: " + length2);
+
+            if(length1.Equals(length2)) {
+                Console.WriteLine("The Lines are of Equal Length");
+            }
+            else
+            {
+                Console.WriteLine("Length of lines are not equal");
+            }
         }
     }
 }
