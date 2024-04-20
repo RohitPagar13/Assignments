@@ -1,0 +1,14 @@
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\bin\Debug\net7.0\Line_Comparison.exe
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\bin\Debug\net7.0\Line_Comparison.deps.json
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\bin\Debug\net7.0\Line_Comparison.runtimeconfig.json
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\bin\Debug\net7.0\Line_Comparison.dll
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\bin\Debug\net7.0\Line_Comparison.pdb
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\Line_Comparison.GeneratedMSBuildEditorConfig.editorconfig
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\Line_Comparison.AssemblyInfoInputs.cache
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\Line_Comparison.AssemblyInfo.cs
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\Line_Comparison.csproj.CoreCompileInputs.cache
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\Line_Comparison.dll
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\refint\Line_Comparison.dll
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\Line_Comparison.pdb
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\Line_Comparison.genruntimeconfig.cache
+E:\BridgeLabz\Assignments\Line_Comparison_Day2\obj\Debug\net7.0\ref\Line_Comparison.dll
