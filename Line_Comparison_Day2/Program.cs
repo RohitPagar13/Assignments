@@ -19,7 +19,31 @@
             return Math.Sqrt((Math.Pow((this.x1 - this.x2), 2)) + (Math.Pow((this.y1 - this.y2), 2)));
         }
 
+        public void Equality(Line otherLine)
+        {
+            if ((this.CalLength()).Equals(otherLine.CalLength()))
+            {
+                Console.WriteLine("The Lines are of Equal Length");
+            } 
+        }
 
+        public void Comparelenghths(Line otherLine)
+        {
+            int com = (this.CalLength()).CompareTo(otherLine.CalLength());
+
+            if (com==0)
+            {
+                Console.WriteLine("The Lines are of Equal Length");
+            }
+            else if (com > 0)
+            {
+                Console.WriteLine("Line 1 length is greater");
+            }
+            else
+            {
+                Console.WriteLine("Line 2 length is greater");
+            }
+        }
     }
     
     internal class Program
@@ -36,13 +60,9 @@
             double length2 = l1.CalLength();
             Console.WriteLine("Length of second line: " + length2);
 
-            if(length1.Equals(length2)) {
-                Console.WriteLine("The Lines are of Equal Length");
-            }
-            else
-            {
-                Console.WriteLine("Length of lines are not equal");
-            }
+            l1.Equality(l2);
+
+            l1.Comparelenghths(l2);
         }
     }
 }
