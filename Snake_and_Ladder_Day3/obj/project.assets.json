@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\BridgeLabz\\Day3\\Git\\Snake_and_Ladder_Day3\\Snake_and_Ladder_Day3.csproj",
+      "projectUniqueName": "E:\\BridgeLabz\\Assignments\\Snake_and_Ladder_Day3\\Snake_and_Ladder_Day3.csproj",
       "projectName": "Snake_and_Ladder_Day3",
-      "projectPath": "E:\\BridgeLabz\\Day3\\Git\\Snake_and_Ladder_Day3\\Snake_and_Ladder_Day3.csproj",
+      "projectPath": "E:\\BridgeLabz\\Assignments\\Snake_and_Ladder_Day3\\Snake_and_Ladder_Day3.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "E:\\BridgeLabz\\Day3\\Git\\Snake_and_Ladder_Day3\\obj\\",
+      "outputPath": "E:\\BridgeLabz\\Assignments\\Snake_and_Ladder_Day3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
