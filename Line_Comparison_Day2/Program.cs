@@ -57,7 +57,7 @@
             Console.WriteLine("Length of first line: " + length1);
 
             Line l2 = new Line();
-            double length2 = l1.CalLength();
+            double length2 = l2.CalLength();
             Console.WriteLine("Length of second line: " + length2);
 
             l1.Equality(l2);
