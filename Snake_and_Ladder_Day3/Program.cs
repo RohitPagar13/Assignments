@@ -9,6 +9,11 @@
         {
             position=0;
         }
+        
+        public int getPosition()
+        {
+            return position;
+        }
 
         public int getRandomDice()
         {
@@ -18,12 +23,14 @@
 
         public void Ladder(int dice)
         {
+            
             position += dice;
             Console.WriteLine(position);
         }
 
         public void Snake(int dice)
         {
+            
             position-=dice;
             Console.WriteLine(position);
         }
@@ -35,18 +42,31 @@
             Console.WriteLine("Welcome to Snake and Ladder");
 
             Player p1 = new Player();
-            int dice = p1.getRandomDice();
+            int choice;
 
-            Console.WriteLine("Enter no.: 1:No play, 2:Ladder, 3: Snake");
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
+            do
             {
-                case 1: Console.WriteLine("You have missed the chance to play"); break;
-                case 2: p1.Ladder(dice); break;
-                case 3: p1.Snake(dice); break;
-                case 0: Console.WriteLine("Enter valid choice"); break;
-            }
+                Console.WriteLine("Enter no.: 1:No play, 2:Ladder, 3: Snake, 0:exit the game");
+                choice = Convert.ToInt32(Console.ReadLine());
+                if (p1.getPosition() < 100)
+                {
+                    
+                    switch (choice)
+                    {
+                        case 1: Console.WriteLine("You have missed the chance to play"); break;
+                        case 2: p1.Ladder(p1.getRandomDice()); break;
+                        case 3: p1.Snake(p1.getRandomDice()); break;
+                        case 0: Console.WriteLine("Exiting"); break;
+                        default: Console.WriteLine("Enter valid choice"); break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("You are winner");
+                    break;
+                }
+            } while (choice!=0);
+            
         }
     }
 }
