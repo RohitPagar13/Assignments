@@ -4,30 +4,39 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Snake and Ladder !! \nPress Any Key to play the game \n");
-            Console.WriteLine("Enter player 1 name: ");
-            string p1Name = Console.ReadLine();
-            Player p1 = new Player(p1Name);
-            Console.WriteLine("Enter player 2 name: ");
-            string p2Name = Console.ReadLine();
-            Player p2 = new Player(p2Name);
+            Console.WriteLine("Welcome to Snake and Ladder !! \n");
 
-            while((p1.getPosition() < 100) || (p2.getPosition() < 100))
+            Console.WriteLine("How many players are going to play? \n");
+            /*int choice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Press 1: Play Game,2: Change Name, 0: Exit Game");*/
+
+            int PlayersCount = Convert.ToInt32(Console.ReadLine());
+            Player[] players = new Player[PlayersCount];
+
+            for(int i= 0; i<PlayersCount; i++)
             {
-                p1.PlayGame();
-                if (p1.getPosition() == 100)
-                {
-                    break;
-                }
-                
-                p2.PlayGame();
-                if (p2.getPosition() == 100)
-                {
-                    break;
-                }
-
+                Console.WriteLine("Enter player name "+ (i+1));
+                players[i]= new Player(Console.ReadLine());
             }
+
             
+            while (true)
+            {
+                bool flag = false;
+                for(int i = 0; i < PlayersCount; i++)
+                {
+                    players[i].PlayGame();
+                    if (players[i].getPosition() == 100)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag == true)
+                {
+                    break;
+                }
+            }
             
             Console.WriteLine("Press Any Key to exit. \n");
             Console.ReadLine();
