@@ -28,14 +28,14 @@
 
         public void Ladder(int dice)
         {
-            if (10 - position >= dice)
+            if (100 - position >= dice)
             {
                 position += dice;
                 Console.WriteLine("Yay !! You have got Ladder " + dice + " and now you are at position:  " + this.getPosition()+"\n");
             }
             else
             {
-                Console.WriteLine("Oh-Shit !! You have got ladder " + dice + "  but you need only " + (10 - position) + " points to win \n");
+                Console.WriteLine("Oh-Shit !! You have got ladder " + dice + "  but you need only " + (100 - position) + " points to win \n");
             }
             
         }
@@ -54,12 +54,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Snake and Ladder !! \nPress Enter to play the game \n");
+            Console.WriteLine("Welcome to Snake and Ladder !! \nPress Any Key to play the game \n");
 
             Player p1 = new Player();
             int choice;
             
-            while(p1.getPosition()<10)
+            while(p1.getPosition()<100)
             {
                 choice = p1.getRandomChoice();
                     switch (choice)
@@ -72,7 +72,7 @@
                             int diceLadder = p1.getRandomDice();
                             p1.Ladder(diceLadder);
                              
-                            if (p1.getPosition() == 10) { 
+                            if (p1.getPosition() == 100) { 
                                 Console.WriteLine("Congratulations !!! You are winner. \n");
                                 }
                             break;
@@ -84,7 +84,7 @@
                             break;
                     }
             }
-            Console.WriteLine("Press Enter to exit. \ns");
+            Console.WriteLine("Press Any Key to exit. \n");
             Console.ReadLine();
         }
     }
