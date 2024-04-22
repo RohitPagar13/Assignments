@@ -2,7 +2,6 @@
 {
     class Player
     {
-        int start=0;
         int position;
 
         public Player()
@@ -21,52 +20,70 @@
             return r.Next(1, 7);
         }
 
+        public int getRandomChoice()
+        {
+            Random r = new Random();
+            return r.Next(1, 4);
+        }
+
         public void Ladder(int dice)
         {
             
             position += dice;
-            Console.WriteLine(position);
+            if (position > 10)
+            {
+                position = 10;
+            }
+
         }
 
         public void Snake(int dice)
         {
             
             position-=dice;
-            Console.WriteLine(position);
+            if(position < 0 )
+            {
+                position = 0;
+            }
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Snake and Ladder");
+            Console.WriteLine("Welcome to Snake and Ladder !! \nPress Enter to play the game");
 
             Player p1 = new Player();
             int choice;
 
-            do
+            while(p1.getPosition()<10)
             {
-                Console.WriteLine("Enter no.: 1:No play, 2:Ladder, 3: Snake, 0:exit the game");
-                choice = Convert.ToInt32(Console.ReadLine());
-                if (p1.getPosition() < 100)
-                {
-                    
+                choice = p1.getRandomChoice();
+                Console.ReadLine();
                     switch (choice)
                     {
-                        case 1: Console.WriteLine("You have missed the chance to play"); break;
-                        case 2: p1.Ladder(p1.getRandomDice()); break;
-                        case 3: p1.Snake(p1.getRandomDice()); break;
-                        case 0: Console.WriteLine("Exiting"); break;
-                        default: Console.WriteLine("Enter valid choice"); break;
+                        case 1: 
+                            Console.WriteLine("Oops !! You have missed the chance to play and you are at position: "+ p1.getPosition()); 
+                            break;
+
+                        case 2:
+                            int diceLadder = p1.getRandomDice();
+                            p1.Ladder(diceLadder);
+                            Console.WriteLine("Yay !! You have got Ladder "+ diceLadder + " and now you are at position:  " + p1.getPosition()); 
+                            if (p1.getPosition() >= 10) { 
+                                Console.WriteLine("Congratulations !!! You are winner.");
+                                }
+                            break;
+
+                        case 3:
+                            int diceSnake = p1.getRandomDice();
+                            p1.Snake(diceSnake);
+                            Console.WriteLine("Oh-no !! You have got Snake "+ diceSnake + " and now you are at position: " + p1.getPosition());
+                            break;
                     }
-                }
-                else
-                {
-                    Console.WriteLine("You are winner");
-                    break;
-                }
-            } while (choice!=0);
-            
+            }
+            Console.WriteLine("Press Enter to exit.");
+            Console.ReadLine() ;
         }
     }
 }
