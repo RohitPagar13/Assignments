@@ -2,7 +2,8 @@
 {
     class Player
     {
-        int position;
+        private int position;
+        private int count;
 
         public Player()
         {
@@ -12,6 +13,11 @@
         public int getPosition()
         {
             return position;
+        }
+
+        public int getCount()
+        {
+            return count;
         }
 
         public int getRandomDice()
@@ -28,6 +34,7 @@
 
         public void Ladder(int dice)
         {
+            count++;
             if (100 - position >= dice)
             {
                 position += dice;
@@ -35,19 +42,20 @@
             }
             else
             {
-                Console.WriteLine("Oh-Shit !! You have got ladder " + dice + "  but you need only " + (100 - position) + " points to win \n");
+                Console.WriteLine("Oh-Shit !! You have got ladder " + dice + "  but you need only " + (100 - position) + " points to win. \n");
             }
             
         }
 
         public void Snake(int dice)
         {
-            
-            position-=dice;
-            if(position < 0 )
+            count++;
+            position -=dice;
+            if (position < 0 )
             {
                 position = 0;
             }
+            Console.WriteLine("Oh-no !! You have got Snake " + dice + " and now you are at position: " + this.getPosition() + "\n");
         }
     }
     internal class Program
@@ -73,14 +81,13 @@
                             p1.Ladder(diceLadder);
                              
                             if (p1.getPosition() == 100) { 
-                                Console.WriteLine("Congratulations !!! You are winner. \n");
+                                Console.WriteLine("Congratulations !!! You are winner. You took "+p1.getCount()+" chances to win."+"\n");
                                 }
                             break;
 
                         case 3:
                             int diceSnake = p1.getRandomDice();
                             p1.Snake(diceSnake);
-                            Console.WriteLine("Oh-no !! You have got Snake "+ diceSnake + " and now you are at position: " + p1.getPosition() + "\n");
                             break;
                     }
             }
