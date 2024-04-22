@@ -7,9 +7,6 @@
             Console.WriteLine("Welcome to Snake and Ladder !! \n");
 
             Console.WriteLine("How many players are going to play? \n");
-            /*int choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Press 1: Play Game,2: Change Name, 0: Exit Game");*/
-
             int PlayersCount = Convert.ToInt32(Console.ReadLine());
             Player[] players = new Player[PlayersCount];
 
