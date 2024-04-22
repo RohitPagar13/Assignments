@@ -27,6 +27,11 @@ namespace Snake_and_Ladder_Day3
         {
             return count;
         }
+        
+        public string getName()
+        {
+            return name;
+        }
 
         public int getRandomDice()
         {

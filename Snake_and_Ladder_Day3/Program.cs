@@ -1,42 +1,57 @@
-﻿namespace Snake_and_Ladder_Day3
+﻿using System.Collections;
+
+namespace Snake_and_Ladder_Day3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake and Ladder !! \n");
-
             Console.WriteLine("How many players are going to play? \n");
             int PlayersCount = Convert.ToInt32(Console.ReadLine());
-            Player[] players = new Player[PlayersCount];
-
-            for(int i= 0; i<PlayersCount; i++)
+            if(PlayersCount > 1 )
             {
-                Console.WriteLine("Enter player name "+ (i+1));
-                players[i]= new Player(Console.ReadLine());
-            }
+                List<Player> players = new List<Player>(PlayersCount);
 
-            
-            while (true)
-            {
-                bool flag = false;
-                for(int i = 0; i < PlayersCount; i++)
+                for (int i = 0; i < PlayersCount; i++)
                 {
-                    players[i].PlayGame();
-                    if (players[i].getPosition() == 100)
+                    Console.WriteLine("Enter player name " + (i + 1));
+                    players.Add(new Player(Console.ReadLine()));
+                }
+                string[] winners = new string[PlayersCount];
+                int j = 0;
+
+                while (players.Count>1)
+                {
+                    string name;
+                    for (int i = 0; i < players.Count; i++)
                     {
-                        flag = true;
-                        break;
+                        players[i].PlayGame();
+                        if (players[i].getPosition() == 100)
+                        {
+                            
+                            winners[j] = players[i].getName();
+                            j++;
+                            players.RemoveAt(i);
+                            break; 
+                        }
+                        
                     }
                 }
-                if (flag == true)
+                winners[winners.Length-1] = players[0].getName();
+                Console.WriteLine("Winning Positions: ");
+                for(int i=0; i<winners.Length; i++)
                 {
-                    break;
+                    Console.WriteLine((i+1) +" "+ winners[i]);
                 }
+
+                Console.WriteLine("Press Any Key to exit. \n");
+                Console.ReadLine();
             }
-            
-            Console.WriteLine("Press Any Key to exit. \n");
-            Console.ReadLine();
+            else
+            {
+                Console.WriteLine("Enter Valid Count or greater than 1");
+            }
         }
     }
 }
