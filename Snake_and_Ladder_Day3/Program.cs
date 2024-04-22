@@ -30,9 +30,9 @@
         {
             
             position += dice;
-            if (position > 10)
+            if (position > 100)
             {
-                position = 10;
+                position = 100;
             }
 
         }
@@ -56,7 +56,7 @@
             Player p1 = new Player();
             int choice;
 
-            while(p1.getPosition()<10)
+            while(p1.getPosition()<100)
             {
                 choice = p1.getRandomChoice();
                 Console.ReadLine();
@@ -70,7 +70,7 @@
                             int diceLadder = p1.getRandomDice();
                             p1.Ladder(diceLadder);
                             Console.WriteLine("Yay !! You have got Ladder "+ diceLadder + " and now you are at position:  " + p1.getPosition()); 
-                            if (p1.getPosition() >= 10) { 
+                            if (p1.getPosition() >= 100) { 
                                 Console.WriteLine("Congratulations !!! You are winner.");
                                 }
                             break;
@@ -83,7 +83,7 @@
                     }
             }
             Console.WriteLine("Press Enter to exit.");
-            Console.ReadLine() ;
+            Console.ReadLine();
         }
     }
 }
