@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,9 +11,10 @@ namespace AddressBook_Day5
     {
         public void GotoContact()
         {
+            List<Contact> Contacts = new List<Contact>();
             while (true)
             {
-                List<Contact> Contacts = new List<Contact>();
+                
 
                 Console.WriteLine("What you want to do? \n1: Add New Contact \n2: Display Record \n3: Edit details \n4: Delete Record \n0: Exit from the Address Book\n");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -24,8 +26,36 @@ namespace AddressBook_Day5
                 switch (choice)
                 {
                     case 1:
-                        Contacts.Add(new Contact());
-                        Console.WriteLine("\nRecord added to the Contacts");
+
+                        Console.WriteLine("Enter First Name: ");
+                        string FName = Console.ReadLine();
+                        bool flag =true;
+                        if (FName != null)
+                        {
+                            foreach (Contact contact in Contacts)
+                            {
+                                if (contact.getFName() == FName)
+                                {
+                                    flag= false;
+                                    break;   
+                                }
+                            }
+
+                            if (flag)
+                            {
+                                Contacts.Add(new Contact(FName));
+                                Console.WriteLine("\nRecord added to the Contacts");
+                            }
+                            else
+                            {
+                                Console.WriteLine("First Name already exists");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("First Name cannot be null");
+                        }
+                        
                         break;
 
                     case 2:

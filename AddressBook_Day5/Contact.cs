@@ -55,10 +55,9 @@ namespace AddressBook_Day5
 
         }
 
-        public Contact() {
+        public Contact(string fName) {
             
-            Console.WriteLine("Enter First Name: ");
-            this.firstName = Console.ReadLine();
+            this.firstName = fName;
 
             Console.WriteLine("Enter Last Name: ");
             this.lastName = Console.ReadLine();
