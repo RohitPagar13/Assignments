@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBook_Day5
 {
-    internal class Contacts
+    internal class Contact
     {
         private string firstName;
         private string lastName;
@@ -55,7 +55,7 @@ namespace AddressBook_Day5
 
         }
 
-        public Contacts() {
+        public Contact() {
             
             Console.WriteLine("Enter First Name: ");
             this.firstName = Console.ReadLine();
